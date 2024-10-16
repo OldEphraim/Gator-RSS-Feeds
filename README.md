@@ -24,13 +24,13 @@ Installation
 Usage
 Once everything is set up, you can run the tool via the command line. Here are the available commands:
 
-Register a new user: ./gator_blog_aggregator register <username>
-Log in as an existing user: ./gator_blog_aggregator login <username>
-Add a new RSS feed: ./gator_blog_aggregator add-feed <feed_name> <feed_url>
-List all available feeds: ./gator_blog_aggregator list-feeds
-Manually scrape feeds: ./gator_blog_aggregator agg <time_between_requests>
-List all users: ./gator_blog_aggregator users
-Reset all users: ./gator_blog_aggregator reset
+1. Register a new user: ./gator_blog_aggregator register <username>
+2. Log in as an existing user: ./gator_blog_aggregator login <username>
+3. Add a new RSS feed: ./gator_blog_aggregator add-feed <feed_name> <feed_url>
+4. List all available feeds: ./gator_blog_aggregator list-feeds
+5. Manually scrape feeds: ./gator_blog_aggregator agg <time_between_requests>
+6. List all users: ./gator_blog_aggregator users
+7. Reset all users: ./gator_blog_aggregator reset
 
 Configuration
 All configurations are managed through the internal state.State and config files. You can customize the database settings, scraping intervals, and other configurations by modifying the appropriate config files or passing arguments to the commands.
