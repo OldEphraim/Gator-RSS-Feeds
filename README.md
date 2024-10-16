@@ -1,42 +1,58 @@
-Gator Blog Aggregator
+# Gator-RSS-Feeds
 
-Gator Blog Aggregator is a command-line tool designed to scrape and aggregate RSS feed data from multiple blogs. It allows users to manage feeds, create accounts, and fetch posts from different blogs, storing them in a database for future retrieval. The tool supports login and registration functionality, user-specific feed management, and feed scraping at configurable intervals.
+A simple RSS feed aggregator written in Rust.
 
-Features
+## Features
+- Fetch RSS feeds from multiple sources
+- Parse and display feed content
+- Cache feed data for offline use
+- Command-line interface (CLI)
 
-User Management: Register and log in as a user to personalize your feed scraping experience.
+## Installation
 
-Feed Aggregation: Fetches RSS feed data from various blogs and stores the results in a database.
+1. Clone the repository:
 
-Feed Management: Add, list, and view feeds. Each user can manage their own feed subscriptions.
+   git clone https://github.com/OldEphraim/Gator-RSS-Feeds.git  
+   cd Gator-RSS-Feeds
 
-Periodic Scraping: Automatically scrape RSS feeds at configurable time intervals.
+2. Build the project:
 
-Feed Tracking: Tracks when feeds were last fetched to avoid duplicate scraping.
+   cargo build --release
 
-Installation
-1. Clone the repository: git clone https://github.com/OldEphraim/gator_blog_aggregator.git
-2. Navigate into the project directory: cd gator_blog_aggregator
-3. Install dependencies (if applicable, such as any Go modules or external libraries): go mod tidy
-4. Set up your database. This project relies on PostgreSQL (or similar). You’ll need to configure the database in the project’s configuration files.
-5. Build the project: go build
+3. Run the application:
 
-Usage
-Once everything is set up, you can run the tool via the command line. Here are the available commands:
+   ./target/release/gator-rss-feeds
 
-1. Register a new user: ./gator_blog_aggregator register <username>
-2. Log in as an existing user: ./gator_blog_aggregator login <username>
-3. Add a new RSS feed: ./gator_blog_aggregator add-feed <feed_name> <feed_url>
-4. List all available feeds: ./gator_blog_aggregator list-feeds
-5. Manually scrape feeds: ./gator_blog_aggregator agg <time_between_requests>
-6. List all users: ./gator_blog_aggregator users
-7. Reset all users: ./gator_blog_aggregator reset
+## Usage
 
-Configuration
-All configurations are managed through the internal state.State and config files. You can customize the database settings, scraping intervals, and other configurations by modifying the appropriate config files or passing arguments to the commands.
+Once the application is built, you can run it from the command line. For example:
 
-Contributing
-Contributions are welcome! If you'd like to contribute to this project, please open a pull request or submit an issue on GitHub.
+   ./gator-rss-feeds --url <RSS_FEED_URL>
 
-License
+### Options
+- `--url <RSS_FEED_URL>`: Specify an RSS feed URL to fetch and display.
+- `--cache`: Cache the feed data for offline use.
+- `--help`: Display the help message.
+
+## Example
+
+Fetching a single feed:
+
+   ./gator-rss-feeds --url https://example.com/rss.xml
+
+Fetching a feed and caching it:
+
+   ./gator-rss-feeds --url https://example.com/rss.xml --cache
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes
+4. Commit your changes (`git commit -m "Add feature"`)
+5. Push to the branch (`git push origin feature-branch`)
+6. Create a pull request
+
+## License
+
 This project is licensed under the MIT License.
